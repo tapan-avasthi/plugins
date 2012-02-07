@@ -9,6 +9,7 @@
 	<target name="all">
 		<antcall target="clean" />
 		<antcall target="deploy" />
+		<antcall target="undeploy" />
 	</target>
 
 	<target name="build-service">
@@ -62,6 +63,13 @@
 		<ant dir="portlets" target="deploy" inheritAll="false" />
 		<ant dir="themes" target="deploy" inheritAll="false" />
 		<ant dir="webs" target="deploy" inheritAll="false" />
+	</target>
+	<target name="undeploy">
+		<ant dir="hooks" target="undeploy" inheritAll="false" />
+		<ant dir="layouttpl" target="undeploy" inheritAll="false" />
+		<ant dir="portlets" target="undeploy" inheritAll="false" />
+		<ant dir="themes" target="undeploy" inheritAll="false" />
+		<ant dir="webs" target="undeploy" inheritAll="false" />
 	</target>
 
 	<target name="direct-deploy">
